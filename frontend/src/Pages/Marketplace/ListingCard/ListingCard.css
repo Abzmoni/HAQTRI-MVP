@@ -1,0 +1,138 @@
+/* src/components/Marketplace/ListingCard/ListingCard.css */
+.listing-card {
+  background: var(--parchment);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(184, 159, 114, 0.2);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  box-shadow: var(--elevation-1);
+  position: relative;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elevation-2);
+  border-color: rgba(184, 159, 114, 0.3);
+}
+
+.listing-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: sepia(0.2);
+}
+
+.listing-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--sepia-dark);
+  line-height: 1.3;
+}
+
+.listing-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--muted-gold);
+  margin-bottom: 1rem;
+}
+
+.listing-details {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.listing-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(184, 159, 114, 0.1);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--warm-gray);
+}
+
+.meta-item i {
+  color: var(--muted-gold);
+  font-size: 0.9rem;
+}
+
+.listing-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.listing-actions .btn {
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verified-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--muted-gold);
+  color: var(--vintage-cream);
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: var(--elevation-1);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .listing-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .listing-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .listing-info {
+    padding: 1.2rem;
+  }
+}
+
+.listing-card {
+  background: var(--parchment);
+  border: 1px solid rgba(184, 159, 114, 0.2);
+  box-shadow: var(--elevation-1);
+  backdrop-filter: blur(5px);
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elevation-2);
+  border-color: rgba(184, 159, 114, 0.3);
+}

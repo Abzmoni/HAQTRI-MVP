@@ -1,0 +1,210 @@
+/* HowItWorks.css */
+.how-it-works {
+    padding: var(--section-spacing) 0;
+    position: relative;
+    z-index: 5;
+    background: var(--parchment);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184, 159, 114, 0.2);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--sepia-dark);
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--muted-gold);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--warm-gray);
+    max-width: 800px;
+    margin: 40px auto 0;
+    line-height: 1.8;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.step-card {
+    background: var(--vintage-cream);
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(184, 159, 114, 0.2);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    box-shadow: var(--elevation-1);
+    text-align: center;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    border-top: 2px solid var(--muted-gold);
+    border-left: 2px solid var(--muted-gold);
+    border-radius: var(--border-radius) 0 0 0;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.step-card::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 0;
+    height: 0;
+    border-bottom: 2px solid var(--muted-gold);
+    border-right: 2px solid var(--muted-gold);
+    border-radius: 0 0 var(--border-radius) 0;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--elevation-2);
+}
+
+.step-card:hover::before,
+.step-card:hover::after {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+.step-icon {
+    font-size: 2.8rem;
+    color: var(--muted-gold);
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.step-card:hover .step-icon {
+    transform: scale(1.05);
+}
+
+.step-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.step-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: var(--muted-gold);
+    transition: var(--transition);
+}
+
+.step-card:hover h3::after {
+    width: 60px;
+}
+
+.step-card p {
+    font-size: 1rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.step-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(184, 159, 114, 0.1);
+    font-family: 'Cormorant Garamond', serif;
+    transition: var(--transition);
+}
+
+.step-card:hover .step-number {
+    color: rgba(184, 159, 114, 0.15);
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .step-card {
+        padding: 30px 25px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+.step-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--muted-gold), transparent);
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.step-card:hover::before {
+  transform: translateX(0);
+}

@@ -1,0 +1,39 @@
+/* src/components/Marketplace/ListingGrid/ListingGrid.css */
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.empty-listings {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--warm-gray);
+}
+
+.empty-listings i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--muted-gold);
+}
+
+.empty-listings h3 {
+  margin-bottom: 0.5rem;
+  color: var(--sepia-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .listing-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .listing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

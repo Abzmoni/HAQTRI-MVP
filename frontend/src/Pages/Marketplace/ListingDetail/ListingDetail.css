@@ -1,0 +1,352 @@
+/* src/components/Marketplace/ListingDetail/ListingDetail.css */
+.listing-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(248, 244, 233, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.listing-detail {
+  background: var(--parchment);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid rgba(184, 159, 114, 0.2);
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--warm-gray);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--muted-gold);
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.detail-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: rgba(184, 159, 114, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-gold);
+  font-size: 3rem;
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.thumbnail.active {
+  border-color: var(--muted-gold);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.category-badge {
+  background: var(--muted-gold);
+  color: var(--vintage-cream);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.like-btn {
+  background: transparent;
+  border: 1px solid var(--warm-gray);
+  color: var(--warm-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.like-btn:hover,
+.like-btn.liked {
+  background: var(--muted-gold);
+  border-color: var(--muted-gold);
+  color: var(--vintage-cream);
+}
+
+.detail-info h1 {
+  font-size: 2rem;
+  color: var(--sepia-dark);
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--muted-gold);
+}
+
+.price-section span {
+  color: var(--warm-gray);
+  font-size: 0.9rem;
+}
+
+.location-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--warm-gray);
+}
+
+.description-section h3,
+.specifications-section h3,
+.seller-section h3 {
+  color: var(--sepia-dark);
+  margin-bottom: 0.8rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.description-section p {
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: var(--sepia-dark);
+  font-size: 0.9rem;
+}
+
+.spec-value {
+  color: var(--warm-gray);
+  font-size: 0.9rem;
+}
+
+.seller-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seller-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(184, 159, 114, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-gold);
+}
+
+.seller-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seller-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.seller-name {
+  font-weight: 600;
+  color: var(--sepia-dark);
+}
+
+.seller-joined {
+  color: var(--warm-gray);
+  font-size: 0.85rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-btn {
+  width: 100%;
+}
+
+.contact-info {
+  background: rgba(184, 159, 114, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(184, 159, 114, 0.1);
+}
+
+.contact-info h4 {
+  color: var(--sepia-dark);
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--warm-gray);
+}
+
+.contact-item i {
+  color: var(--muted-gold);
+  width: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .main-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listing-detail-overlay {
+    padding: 1rem;
+  }
+  
+  .listing-detail {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .detail-content {
+    padding: 1.5rem;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .seller-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hide header on desktop if sidebar is always visible */
+@media(min-width: 1024px) {
+  .dashboard-header {
+    display: none;
+  }
+}
+
+.dashboard-header .logo {
+  font-weight: bold;
+}
+
+.header-actions button {
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* Hide hamburger specifically on desktop if you want header to remain */
+@media(min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+}

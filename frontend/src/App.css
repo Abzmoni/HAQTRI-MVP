@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+.project {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.project h2 {
+  margin-top: 0;
+  color: #444;
+}
+
+.project p {
+  line-height: 1.6;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.app-content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.app-content.visible {
+  opacity: 1;
+}
+
+/* Ensure auth pages take full height */
+.auth-container {
+  min-height: 100vh;
+}
+
+/* Hide main layout components on auth pages */
+body.auth-page .header,
+body.auth-page .sticky-cta,
+body.auth-page .mobile-menu,
+body.auth-page .footer,
+body.auth-page .back-to-top {
+  display: none;
+}
+
+body.auth-page {
+  overflow: hidden;
+}

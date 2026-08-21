@@ -1,0 +1,70 @@
+/* Footer.css */
+footer {
+    padding: 60px 0 30px;
+    position: relative;
+    z-index: 5;
+    background: var(--sepia-dark);
+    border-top: 1px solid rgba(184, 159, 114, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    display: inline-block;
+    color: var(--vintage-cream);
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: var(--muted-gold);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--light-taupe);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--muted-gold);
+    transform: translateX(3px);
+}
+
+.footer-links a i {
+    color: var(--muted-gold);
+    font-size: 0.8rem;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(184, 159, 114, 0.2);
+    color: var(--light-taupe);
+    font-size: 0.9rem;
+}
